@@ -1,0 +1,51 @@
+﻿body {
+	font-family: cursive;
+	font-size: 22px;
+	color: #2a1f69;
+	/*background-image: url(../Resource/blurred-colors-minimalistic-2826348-1920x1080.png);*/
+}
+
+.all {
+	width: 550px;
+	height: 250px;
+	margin: 350px auto;
+	text-align: center;
+}
+
+button {
+	margin-left: auto;
+	font-family: cursive;
+	font-size: 20px;
+	border-radius: 7px;
+	border: 2px solid #2a1f69;
+	width: 200px;
+	margin-top: 20px;
+	height: 40px;
+	color: #2a1f69;
+	background-color: transparent;
+}
+
+input[type=text], input[type=password] {
+	font-family: cursive;
+	font-size: 18px;
+	color: #191a3d;
+	border-radius: 3px;
+	border: 2px solid #2a1f69;
+	width: 250px;
+	background-color: transparent;
+}
+
+input[type=text] {
+	margin: 0 0 0 30px;
+}
+
+input[type=password] {
+	margin: 0 0 0 17px;
+}
+
+label {
+	font-family: cursive;
+	color: #2a1f69;
+	font-weight: lighter;
+}
+

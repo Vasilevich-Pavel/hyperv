@@ -1,0 +1,57 @@
+﻿body {
+	font-family: cursive;
+	font-size: 22px;
+	color: #2a1f69;
+	/*background-image: url(../Resource/blurred-colors-minimalistic-2826348-1920x1080.png);*/
+}
+
+.all {
+	margin: 100px auto;
+}
+
+.exit {
+	text-align:right;
+	margin-right: 300px;
+	margin-top: 70px;
+}
+
+table {
+	margin: 12px auto;
+	border-collapse: collapse;
+	border-spacing: 10px;
+	border: 0 solid #fff;
+	text-align: center;
+}
+
+th {
+	font-weight: normal;
+	border-top-color: #fff;
+	border-bottom: 2px solid #2a1f69;
+	border-right: 30px solid #fff;
+	border-left: 30px solid #fff;
+	color: #2a1f69;
+	padding: 8px 2px;
+}
+
+td {
+	border-left: 30px solid #fff;
+	border-right: 30px solid #fff;
+	border-bottom: 6px solid #fff;
+	color: #2a1f69;
+	padding: 8px 2px;
+}
+
+.ip {
+	font-size: 20px;
+}
+
+button {
+	font-family: cursive;
+	font-size: 20px;
+	border-radius: 7px;
+	border: 2px solid #2a1f69;
+	width: 210px;
+	height: 35px;
+	color: #2a1f69;
+	background-color: transparent;
+}

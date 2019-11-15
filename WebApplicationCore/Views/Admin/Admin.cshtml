@@ -1,0 +1,113 @@
+﻿@{
+	Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta charset="utf-8" name="viewport" content="width=device-width" />
+	<link href="~/css/admin.css" rel="stylesheet" type="text/css" />
+	<script src="~/js/admin.js"></script>
+	<title>Админка</title>
+</head>
+<body >
+	<div class="allData">
+
+		@using (Html.BeginForm("Admin", "Admin"))
+		{
+			<div class="article">
+				<div class="leftSiteBar">
+
+					<div class="addIp">
+						<p><label>Введите IP для добавления</label></p>
+
+						<p><input type="text" id="addIp" autocomplete="off" /></p>
+
+						<p><button name="action" id="addbut" onclick="add()">Добавить IP</button></p>
+
+					</div>
+
+					<div class="deleteIp">
+
+						<p><label>Выберите IP для удаления</label></p>
+
+						<p>
+							<select id="deleteSelect">
+								@try
+								{
+									for (int i = 0; i < ViewBag.Ip.Count; i++)
+									{
+										<option>@ViewBag.Ip[i]</option>
+									}
+								}
+								catch { }
+							</select>
+						</p>
+
+						<p><button name="action" id="delbut" onclick="del()">Удалить IP</button></p>
+					</div>
+
+					<div class="registrationUser">
+						<p>
+							<label>Регистрация нового пользователя</label>
+						</p>
+
+						<p>
+							<button name="action" type="submit" value="registration" id="registration">Зарегистрировать</button>
+						</p>
+					</div>
+
+					<div class="exit_">
+						<p><button name="action" value="exit">Назад</button></p>
+					</div>
+
+				</div>
+
+				<div class="table">
+					<table cellpadding="1" border="1" class="mytable">
+						<tr>
+							<th>Виртуальная машина</th>
+							<th>IP</th>
+							<th>Включить ВМ</th>
+							<th>Остановить ВМ</th>
+							<th>Выключить ВМ</th>
+							<th>Состояние ВМ</th>
+						</tr>
+
+						@try
+						{
+							for (int i = 0; i < ViewBag.NameVM.Count; i++)
+							{
+								<tr>
+									<td>@ViewBag.NameVM[i]</td>
+									<td class="ip" >@ViewBag.AllIp[i]</td>
+									<td>
+										@{string start = "start|" + ViewBag.NameVM[i] + "|" + ViewBag.AllIp[i];}
+										<button name="action" value=@start class="start">Включить</button>
+									</td>
+									<td>
+										@{string pause = "pause|" + ViewBag.NameVM[i] + "|" + ViewBag.AllIp[i];}
+										<button name="action" value=@pause class="pause">Остановить</button>
+									</td>
+									<td>
+										@{string stop = "stop|" + ViewBag.NameVM[i] + "|" + ViewBag.AllIp[i];}
+										<button name="action" value=@stop class="stop">Выключить</button>
+									</td>
+									<td class="state" id='color'>@ViewBag.StateVM[i]</td>
+								</tr>
+
+							}
+
+						}
+						catch { }
+
+					</table>
+				</div>
+
+			</div>
+		}
+
+	</div>
+</body>
+</html>

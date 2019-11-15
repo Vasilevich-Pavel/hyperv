@@ -1,0 +1,73 @@
+﻿@{
+	Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta charset="utf-8" name="viewport" content="width=device-width" />
+	<link href="~/css/registration.css" rel="stylesheet" type="text/css" />
+	<script src="~/js/registration.js"></script>
+	<title>Регистрация</title>
+</head>
+<body>
+	@using (Html.BeginForm("Registration", "Registration"))
+	{
+	<div class="allData">
+		<div class="left-registration">
+			<p>
+				<label id="log">Введите логин</label>
+				<input type="text" id="login" name="login" autocomplete="off" value="" />
+			</p>
+			<p>
+				<label id="password1">Введите пароль</label>
+				<input type="password" id="pass1" name="password1" autocomplete="off" value="" />
+			</p>
+			<p>
+				<label id="password2">Повторите пароль</label>
+				<input type="password" id="pass2" name="password2" autocomplete="off" value="" />
+			</p>
+			<div class="buttons">
+				<button name="action" id="save" onclick="adminPage()">Сохранить</button>
+				<button name="action" id="exit" value=@ViewBag.NameVM.Count onclick="exit()">Назад</button>
+			</div>
+		</div>
+
+		<div class="right-registration">
+			<table class="table_">
+
+				<tr>
+					<th>Виртуальная машина</th>
+					<th>IP</th>
+					<th>Сделать доступным</th>
+				</tr>
+
+				@try
+				{
+					for (int i = 0; i < ViewBag.NameVM.Count; i++)
+					{
+						<tr>
+							<td>@ViewBag.NameVM[i]</td>
+							<td class="ip">@ViewBag.AllIp[i]</td>
+							<td class="checkboxs">
+								@{
+									string check = "/" + ViewBag.NameVM[i] + "/" + ViewBag.AllIp[i];
+									string name = "checkbox" + i.ToString();
+								}
+								<input type="checkbox" value=@check id=@name />
+							</td>
+						</tr>
+					}
+				}
+				catch { }
+
+
+			</table>
+		</div>
+
+	</div>
+	}
+</body>
+</html>
+

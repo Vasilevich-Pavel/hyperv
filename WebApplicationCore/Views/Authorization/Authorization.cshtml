@@ -1,0 +1,35 @@
+﻿@{
+	Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta charset="utf-8" name="viewport" content="width=device-width" />
+	<link href="~/css/authorization.css" rel="stylesheet" type="text/css" />
+	<script src="~/js/authorization.js"></script>
+	<title>Авторизация</title>
+</head>
+<body>
+	<div class="all">
+		
+		@using(Html.BeginForm("GetLoginAndPassword", "Authorization"))
+
+		{
+			<p>
+				<label id="login">Логин</label>
+				<input type="text" id="loginInput" autocomplete="off" value=""/>
+			</p>
+			<p>
+				<label id="password">Пароль</label>
+				<input type="password" id="passwordInput" autocomplete="off" value=""/>
+			</p>
+			<div class="buttons">
+				<button name="action" type="submit" id="enter" onclick="send()">Войти</button>
+			</div>
+		}
+	</div>
+</body>
+</html>
+

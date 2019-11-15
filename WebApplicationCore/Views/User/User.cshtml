@@ -1,0 +1,66 @@
+﻿@{
+	Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta charset="utf-8" name="viewport" content="width=device-width" />
+	<link href="~/css/user.css" rel="stylesheet" type="text/css" />
+	<title>Страница пользователя</title>
+</head>
+<body>
+	<div class="all">
+
+		@using (Html.BeginForm("User", "User", FormMethod.Post))
+		{
+		<div class="form_">
+
+			<div class="table_">
+				<table cellpadding="1" border="1" class="mytable">
+					<tr>
+						<th>Виртуальная машина</th>
+						<th>IP</th>
+						<th>Включить ВМ</th>
+						<th>Остановить ВМ</th>
+						<th>Выключить ВМ</th>
+						<th>Состояние ВМ</th>
+					</tr>
+
+					@for (int i = 0; i < ViewBag.NameVM.Count && i < ViewBag.StateVM.Count; i++)
+					{
+
+						<tr>
+							<td>@ViewBag.NameVM[i]</td>
+							<td id="ip">@ViewBag.Ip[i]</td>
+							<td>
+								@{string start = "start|" + ViewBag.NameVM[i] + "|" + ViewBag.Ip[i];}
+								<button type="submit" id=@start name="action" value=@start class="start">Включить</button>
+							</td>
+							<td>
+								@{string pause = "pause|" + ViewBag.NameVM[i] + "|" + ViewBag.Ip[i];}
+								<button type="submit" id=@pause name="action" value=@pause class="pause">Остановить</button>
+
+							</td>
+							<td>
+								@{string stop = "stop|" + ViewBag.NameVM[i] + "|" + ViewBag.Ip[i];}
+								<button type="submit" id=@stop name="action" value=@stop class="stop">Выключить</button>
+							</td>
+							<td class="state" id='color'>@ViewBag.StateVM[i]</td>
+						</tr>
+					}
+
+				</table>
+			</div>
+
+			<div class="exit">
+				<p><button name="action" value="exit">Назад</button></p>
+			</div>
+
+		</div>
+		}
+
+	</div>
+</body>
+</html>
