@@ -9,7 +9,7 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.Win32.Primitives" Version="4.3.0" />
     <PackageReference Include="Npgsql" Version="4.1.1" />
-    <PackageReference Include="ServiceStack" Version="5.7.0" />
+    <PackageReference Include="ServiceStack" Version="5.9.2" />
     <PackageReference Include="ServiceStack.Authentication.IdentityServer" Version="5.0.1" />
     <PackageReference Include="ServiceStack.OrmLite.PostgreSQL.Core" Version="5.7.0" />
     <PackageReference Include="System.Diagnostics.Process" Version="4.3.0" />
